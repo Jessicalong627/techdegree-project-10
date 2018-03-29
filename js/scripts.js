@@ -11,14 +11,18 @@ ourRequest.onload = function() {
                                data.results[i].picture.medium +'" data-pic='+
                                data.results[i].picture.large +' data-name="'+
                                data.results[i].name.first + ' ' +
-                               data.results[i].name.last + '" data-email="'+
+                               data.results[i].name.last + '" + data-birthday="' +
+                               data.results[i].dob + ' "  data-address="' +
+                               data.results[i].location.street + ' ' +
+                               data.results[i].location.state + ' ' +
+                               data.results[i].location.postcode + ' " data-email="'+
                                data.results[i].email +'" data-location="' +
                                data.results[i].location.city + '" data-phone="' +
-                               data.results[i].phone + '"><span class="user-name">'+
+                               data.results[i].phone +  '"><span class="user-name">'+
                                data.results[i].name.first + ' ' +
                                data.results[i].name.last + '<br> ' +
                                data.results[i].email + '<br> ' +
-                              data.results[i].location.city + '</span></p>');
+                               data.results[i].location.city + '</span></p>');
 
 
     }
@@ -39,6 +43,7 @@ span.onclick = function() {
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+
     }
 };
 
@@ -49,16 +54,9 @@ users.addEventListener('click', function(e) {
   let data_email = target.getAttribute('data-email');
   let data_location = target.getAttribute('data-location');
   let data_phone = target.getAttribute('data-phone');
-
-
-// photo
-//name
-// email
-//city with bottom border
-
-//phone
-//address, state, zip
-//Birthday 01/04/76
+  let data_address = target.getAttribute('data-address');
+  let data_birthday = target.getAttribute('data-birthday');
+  let bday = 'Birthday: ' + new Date(data_birthday).toLocaleDateString('en-US')
 
   if (target.nodeName === 'IMG') {
       modal.style.display = "block";
@@ -67,6 +65,8 @@ users.addEventListener('click', function(e) {
       content.innerHTML += '<span class="email">'+ data_email +'</span>';
       content.innerHTML += '<span class="location">'+ data_location +'</span>';
       content.innerHTML += '<span class="phone">'+ data_phone +'</span>';
+      content.innerHTML += '<span class="address">'+ data_address +'</span>';
+      content.innerHTML += '<span class="birthday">'+ bday +'</span>';
 
 
 }

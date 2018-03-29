@@ -46,6 +46,18 @@ img {
   color: grey;
   line-height: 1.6;
 }
+.birthday {
+  display: block;
+  text-align: center;
+  color: grey;
+  line-height: 1.6;
+}
+.address {
+  display: block;
+  text-align: center;
+  color: grey;
+  line-height: 1.6;
+}
 .location {
   text-align: center;
   line-height: 1.6;
