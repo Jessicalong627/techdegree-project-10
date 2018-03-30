@@ -109,25 +109,31 @@ p:hover {
 }
 
 
-.modal-content {
+.modal-window{
     background-color: #fefefe;
     margin: auto;
-    padding: 80px 30px;;
     border: 1px solid #888;
     border-radius: 5px;
     width: 25%;
 }
-
+.modal-content {
+      padding: 80px 30px;
+}
 
 .close {
     color: #aaaaaa;
     float: right;
-    font-size: 28px;
+    font-size: 48px;
     font-weight: bold;
+    padding-right: 10px;
 }
 
 .close:hover,
 .close:focus {
     color: #000;
     text-decoration: none;
+}
+
+.user-name {
+  font-weight: 700;
 }

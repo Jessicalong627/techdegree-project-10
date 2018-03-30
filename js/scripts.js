@@ -33,17 +33,13 @@ ourRequest.send();
 
 
 const modal = document.getElementById('myModal');
-let span = document.getElementsByClassName("close")[0];
+const span = document.getElementsByClassName("close")[0];
 const content = document.getElementsByClassName("modal-content")[0];
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
 
 window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target == modal || event.target.textContent ==    "×"  ) {
         modal.style.display = "none";
-
     }
 };
 
@@ -56,10 +52,12 @@ users.addEventListener('click', function(e) {
   let data_phone = target.getAttribute('data-phone');
   let data_address = target.getAttribute('data-address');
   let data_birthday = target.getAttribute('data-birthday');
-  let bday = 'Birthday: ' + new Date(data_birthday).toLocaleDateString('en-US')
+  let bday = 'Birthday: ' + new Date(data_birthday).toLocaleDateString('en-US');
 
   if (target.nodeName === 'IMG') {
+
       modal.style.display = "block";
+      content.innerHTML = "";
       content.innerHTML += '<img id="profile" src="' + data_src + '" alt="">';
       content.innerHTML += '<span class="name">'+ data_name +'</span>';
       content.innerHTML += '<span class="email">'+ data_email +'</span>';
@@ -72,3 +70,5 @@ users.addEventListener('click', function(e) {
 }
 
   });
+
+//  To make your x button work, you can just use your other close function and just add `|| event.target.textContent ==    "×"` to the if statement.
