@@ -71,4 +71,3 @@ users.addEventListener('click', function(e) {
 
   });
 
-//  To make your x button work, you can just use your other close function and just add `|| event.target.textContent ==    "×"` to the if statement.
