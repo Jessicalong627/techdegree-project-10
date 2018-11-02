@@ -64,7 +64,6 @@ users.addEventListener('click', function(e) {
       content.innerHTML += '<span class="location">'+ data_location +'</span>';
       content.innerHTML += '<span class="phone">'+ data_phone +'</span>';
       content.innerHTML += '<span class="address">'+ data_address +'</span>';
-      content.innerHTML += '<span class="birthday">'+ bday +'</span>';
 
 
 }
